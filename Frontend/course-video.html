@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centered Video with Bootstrap</title>
-        <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Video with Bootstrap</title>
+    <link rel="stylesheet" href="css/eventCSS/styles.css" />
 
-        <div class="container mt-5">
-            <div class="d-flex justify-content-center">
-                <!-- <video width="560" height="315" controls>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5" id="video_section">
+      <div class="d-flex justify-content-center">
+        <!-- <video width="560" height="315" controls>
         <source src="https://www.youtube.com/embed/aj7nhpKTkGY?si=JU5lJVLhG9L3Y8zt" type="video/mp4">
         Your browser does not support the video tag.
       </video> -->
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/DKce5yj2ADM?si=CKIUSj9doDsPngto"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/DKce5yj2ADM?si=CKIUSj9doDsPngto"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="hide_login" id="login_Warning">login to see this page</div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./uservalidation/videoToggle.js" defer></script>
 
-    </body>
+  </body>
 </html>
