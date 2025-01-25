@@ -4,10 +4,12 @@ const authRoutes = require("./routes/auth");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const uri = "mongodb://localhost:27017/educationalWeb";
+require("dotenv").config();
+const MONGODB_URI = process.env.MONGODB_URI;
+const origin = process.env.ORIGIN;
 
 mongoose
-  .connect(uri, {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -16,13 +18,16 @@ mongoose
 
 app.use(
   cors({
-    origin: "*",
+    origin,
   })
 );
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
+app.get("/", (_, res) => {
+  res.send("welcome to backend");
+});
 app.use("/auth", authRoutes);
 
 app.listen(5000, () => {
