@@ -17,6 +17,12 @@ async function login() {
   if (response.success) {
     setCookie("auth_token", response.auth_token, 10);
     update_DOM_auth_token();
+    document
+      .getElementsByClassName("js-modal-shopify")[0]
+      .classList.remove("is-shown--off-flow");
+    document
+      .getElementsByClassName("js-modal-shopify")[0]
+      .classList.add("is-hidden--off-flow");
   }
 }
 
@@ -39,5 +45,11 @@ async function signup() {
   if (response.success) {
     setCookie("auth_token", response.auth_token, 10);
     update_DOM_auth_token();
+    document
+      .getElementsByClassName("js-modal-shopify")[0]
+      .classList.remove("is-shown--off-flow");
+    document
+      .getElementsByClassName("js-modal-shopify")[0]
+      .classList.add("is-hidden--off-flow");
   }
 }
