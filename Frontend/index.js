@@ -1,5 +1,7 @@
 // const backendUrl = "http://localhost:5000";
+
 const backendUrl = "https://eduwise-1.onrender.com";
+
 async function login() {
   const login_email = document.getElementById("login-email");
   const login_password = document.getElementById("login-password");
@@ -15,7 +17,9 @@ async function login() {
   });
   response = await response.json();
   if (response.success) {
+    console.log(response);
     setCookie("auth_token", response.auth_token, 10);
+
     update_DOM_auth_token();
     document
       .getElementsByClassName("js-modal-shopify")[0]
@@ -52,4 +56,8 @@ async function signup() {
       .getElementsByClassName("js-modal-shopify")[0]
       .classList.add("is-hidden--off-flow");
   }
+}
+async function logout() {
+  deleteCookie("auth_token");
+  update_DOM_auth_token();
 }

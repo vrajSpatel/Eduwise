@@ -9,20 +9,30 @@ function getCookie(name) {
   return value;
 }
 
-const loginPending = document.getElementById("login_Warning");
-const loginsuccessful = document.getElementById("video_section");
-console.log(loginPending);
-console.log(loginsuccessful);
-
+const cookie = getCookie("auth_token");
+if (cookie && cookie !== "") {
+  console.log("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+  document
+    .getElementsByClassName("js-modal-shopify")[0]
+    .classList.remove("is-shown--off-flow");
+  document
+    .getElementsByClassName("js-modal-shopify")[0]
+    .classList.add("is-hidden--off-flow");
+} else {
+  console.log("-------------------------------------------");
+  document
+    .getElementsByClassName("js-modal-shopify")[0]
+    .classList.add("is-shown--off-flow");
+  document
+    .getElementsByClassName("js-modal-shopify")[0]
+    .classList.remove("is-hidden--off-flow");
+}
 const videoToggle = () => {
-  const cookie = getCookie("auth_token");
-  console.log(cookie);
+  var loginPending = document.getElementById("login_Warning");
+  var loginsuccessful = document.getElementById("video_section");
   if (cookie && cookie !== "") {
     loginPending.classList.add("hide_login");
     loginsuccessful.classList.remove("hide_login");
-    document
-      .getElementsByClassName("js-modal-shopify")[0]
-      .classList.remove("is-shown--off-flow");
   } else {
     loginsuccessful.classList.add("hide_login");
     loginPending.classList.remove("hide_login");
