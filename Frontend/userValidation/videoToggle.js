@@ -19,6 +19,9 @@ const videoToggle = () => {
   if (cookie && cookie !== "") {
     loginPending.classList.add("hide_login");
     loginsuccessful.classList.remove("hide_login");
+    document
+      .getElementsByClassName("js-modal-shopify")[0]
+      .classList.remove("is-shown--off-flow");
   } else {
     loginsuccessful.classList.add("hide_login");
     loginPending.classList.remove("hide_login");
