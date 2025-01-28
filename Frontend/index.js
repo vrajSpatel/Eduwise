@@ -21,6 +21,7 @@ async function login() {
     setCookie("auth_token", response.auth_token, 10);
 
     update_DOM_auth_token();
+    videoToggle();
     document
       .getElementsByClassName("js-modal-shopify")[0]
       .classList.remove("is-shown--off-flow");
@@ -49,6 +50,7 @@ async function signup() {
   if (response.success) {
     setCookie("auth_token", response.auth_token, 10);
     update_DOM_auth_token();
+    videoToggle();
     document
       .getElementsByClassName("js-modal-shopify")[0]
       .classList.remove("is-shown--off-flow");
@@ -60,4 +62,5 @@ async function signup() {
 async function logout() {
   deleteCookie("auth_token");
   update_DOM_auth_token();
+  videoToggle();
 }

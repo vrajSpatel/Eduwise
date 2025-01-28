@@ -9,9 +9,8 @@ function getCookie(name) {
   return value;
 }
 
-const cookie = getCookie("auth_token");
+var cookie = getCookie("auth_token");
 if (cookie && cookie !== "") {
-  console.log("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
   document
     .getElementsByClassName("js-modal-shopify")[0]
     .classList.remove("is-shown--off-flow");
@@ -19,7 +18,6 @@ if (cookie && cookie !== "") {
     .getElementsByClassName("js-modal-shopify")[0]
     .classList.add("is-hidden--off-flow");
 } else {
-  console.log("-------------------------------------------");
   document
     .getElementsByClassName("js-modal-shopify")[0]
     .classList.add("is-shown--off-flow");
@@ -27,7 +25,10 @@ if (cookie && cookie !== "") {
     .getElementsByClassName("js-modal-shopify")[0]
     .classList.remove("is-hidden--off-flow");
 }
+
 const videoToggle = () => {
+  var cookie = getCookie("auth_token");
+  console.log("toggling video");
   var loginPending = document.getElementById("login_Warning");
   var loginsuccessful = document.getElementById("video_section");
   if (cookie && cookie !== "") {
