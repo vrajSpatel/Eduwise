@@ -1,7 +1,22 @@
 // const backendUrl = "http://localhost:5000";
 
 const backendUrl = "https://eduwise-1.onrender.com";
-
+function submitHandler(e) {
+  console.log(e);
+}
+const videoToggle = () => {
+  var cookie = getCookie("auth_token");
+  console.log("toggling video");
+  var loginPending = document.getElementById("login_Warning");
+  var loginsuccessful = document.getElementById("video_section");
+  if (cookie && cookie !== "") {
+    loginPending?.classList.add("hide_login");
+    loginsuccessful?.classList.remove("hide_login");
+  } else {
+    loginsuccessful?.classList.add("hide_login");
+    loginPending?.classList.remove("hide_login");
+  }
+};
 async function login() {
   const login_email = document.getElementById("login-email");
   const login_password = document.getElementById("login-password");
